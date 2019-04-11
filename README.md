@@ -1,4 +1,11 @@
 # DockerLamp
-Simple instructions on how to build a Lamp working using Docker
+How to build a Lamp working using Docker
 
-Copy and execute contents of file <a href=download.sh>download.sh</a>
+## Create a directory
+```mkdir DockerLamp```
+
+## Enter the directory
+```cd DockerLamp```
+
+## Download and execute download.sh script
+```wget https://raw.githubusercontent.com/robertoarcomano/DockerLamp/master/install.sh -q -O -|bash```
