@@ -8,4 +8,4 @@ wget https://raw.githubusercontent.com/robertoarcomano/DockerLamp/master/Dockerf
 docker create --name "bertolinux_lamp" bertolinux_lamp
 
 # 3. Start the container
-docker start -d bertolinux_lamp
+docker start bertolinux_lamp
