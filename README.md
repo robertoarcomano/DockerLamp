@@ -12,10 +12,13 @@ How to build a Lamp working using Docker
 
 
 <html>
-  <body>
-    <button id="copy-button" data-clipboard-text="Copy Me!" title="Click to copy me.">Copy to Clipboard</button>
+  <head>
     <script src="ZeroClipboard.js"></script>
     <script src="main.js"></script>
+  </head>
+  <body>
+    <button id="copy-button" data-clipboard-text="Copy Me!" title="Click to copy me.">Copy to Clipboard</button>
+    
   </body>
 </html>
 
