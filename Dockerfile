@@ -19,4 +19,6 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 EXPOSE 22
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN rm -f /var/www/html/index.html
+COPY index.php /var/www/html/index.php
 CMD ["/usr/bin/supervisord"]
