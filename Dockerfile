@@ -20,6 +20,6 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
 
-RUN apt-get install -y openssh-server python nginx
+RUN service apache2 start
 
 
