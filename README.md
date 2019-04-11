@@ -10,7 +10,7 @@ How to build a Lamp working using Docker
 ## Download and execute download.sh script
 ```wget https://raw.githubusercontent.com/robertoarcomano/DockerLamp/master/install.sh -q -O -|bash```
 
-{::nomarkdown}
+
 <html>
   <body>
     <button id="copy-button" data-clipboard-text="Copy Me!" title="Click to copy me.">Copy to Clipboard</button>
@@ -18,4 +18,4 @@ How to build a Lamp working using Docker
     <script src="main.js"></script>
   </body>
 </html>
-{:/}
+
