@@ -1,8 +1,17 @@
 #!/bin/bash
+# Script to Create a Container for LAMP, using Docker
 
-# Download Dockerfile and execute script
-wget -q https://github.com/robertoarcomano/DockerLamp/archive/master.zip
-unzip master.zip
-rm master.zip
-cd DockerLamp-master
-sh ./create_lamp.sh 
+# 1. Download Dockerfile
+wget https://raw.githubusercontent.com/robertoarcomano/DockerLamp/master/Dockerfile
+
+# 2. Create the image using Dockerfile
+docker build -t bertolinux_lamp .
+
+# 3. Create the container from the image
+docker create --name "bertolinux_lamp" bertolinux_lamp
+
+# 4. Start the container
+docker start bertolinux_lamp
+
+# 5. Connect to the container
+docker exec -it bertolinux_lamp /bin/bash
