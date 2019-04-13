@@ -21,14 +21,15 @@ EXPOSE 22
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN rm -f /var/www/html/index.html
 COPY index.php /var/www/html/index.php
+ENV MYSQL_ROOT_PASSWORD=pass
 
 COPY db.sql /tmp/db.sql
 COPY init.sql /tmp/init.sql
 RUN service mysql start
 
-RUN mysql mysql < /tmp/init.sql
-RUN mysqladmin create lamp
-RUN mysql lamp < /tmp/db.sql
+RUN mysql -u root -ppass mysql < /tmp/init.sql
+RUN mysqladmin -u root -ppass  create lamp
+RUN mysql -u root -ppass lamp < /tmp/db.sql
 
 
 CMD ["/usr/bin/supervisord"]
