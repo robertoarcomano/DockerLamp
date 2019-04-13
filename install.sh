@@ -6,13 +6,13 @@ git clone https://github.com/robertoarcomano/DockerLamp.git /tmp/DockerLamp
 cd /tmp/DockerLamp
 
 # 2. Download Dockerfile and create image
-docker build -t bertolinux_lamp .
+docker build -t dockerlamp .
 
 # 3. Create the container from the image
-docker create -p 81:80 --name "bertolinux_lamp" bertolinux_lamp
+docker create -p 81:80 --name "dockerlamp" dockerlamp
 
 # 4. Start the container
-docker start bertolinux_lamp
+docker start dockerlamp
 
 # 5. Delete supervisor.conf /tmp/Dockerfile
 cd 
