@@ -23,7 +23,11 @@ RUN rm -f /var/www/html/index.html
 COPY index.php /var/www/html/index.php
 
 COPY db.sql /tmp/db.sql
+COPY init.sql /tmp/init.sql
+RUN mysql mysql < /tmp/init.sql
+
 RUN mysqladmin create lamp
 RUN mysql lamp < /tmp/db.sql
+
 
 CMD ["/usr/bin/supervisord"]
