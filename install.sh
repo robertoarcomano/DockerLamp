@@ -1,13 +1,9 @@
 #!/bin/bash
 # Script to Create a Container for LAMP, using Docker
 
-# 1. Download supervisor.conf /tmp/Dockerfile
-mkdir /tmp/bertolinux_lamp
-cd /tmp/bertolinux_lamp
-wget https://raw.githubusercontent.com/robertoarcomano/DockerLamp/master/supervisord.conf
-wget https://raw.githubusercontent.com/robertoarcomano/DockerLamp/master/Dockerfile
-wget https://raw.githubusercontent.com/robertoarcomano/DockerLamp/master/index.php
-wget https://raw.githubusercontent.com/robertoarcomano/DockerLamp/master/db.sql
+# 1. Download git repository
+git clone https://github.com/robertoarcomano/DockerLamp.git /tmp/DockerLamp
+cd /tmp/DockerLamp
 
 # 2. Download Dockerfile and create image
 docker build -t bertolinux_lamp .
@@ -20,4 +16,4 @@ docker start bertolinux_lamp
 
 # 5. Delete supervisor.conf /tmp/Dockerfile
 cd 
-rm -rf /tmp/bertolinux_lamp
+rm -rf /tmp/DockerLamp
