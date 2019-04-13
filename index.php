@@ -1,11 +1,11 @@
 <?php 
-$db = new mysqli("localhost","root","","lamp");
+$db = new mysqli("localhost","root","pass","lamp");
 if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
 }
-//$db->query("delete from users");
+$db->query("delete from users");
 for ($i = 0; $i < 10; $i++)
-;//     $result = $db->query("insert into users(name) values('User $i')");
+        $result = $db->query("insert into users(name) values('User $i')");
 
 ?><table border=1>
 <tr> <th>ID</th> <th>NAME</th> </tr>
