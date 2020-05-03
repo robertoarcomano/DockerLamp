@@ -19,7 +19,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 # DB Configuration
 COPY db.sh /tmp
-COPY /backup/wordpress.dump /tmp
+COPY wordpress.dump /tmp
 RUN service mysql start && /tmp/db.sh
 
 RUN rm -rf /var/www/html
