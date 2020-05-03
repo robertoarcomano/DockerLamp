@@ -19,15 +19,14 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 # DB Configuration
 COPY db.sh /tmp
+COPY /backup/wordpress.dump /tmp
 RUN service mysql start && /tmp/db.sh
+
+RUN rm -rf /var/www/html
+RUN ln -s /usr/share/wordpress /var/www/html
+RUN a2enmod rewrite
+COPY .htaccess /etc/wordpress/
 
 EXPOSE 22
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-RUN rm -rf /var/www/html
-RUN ln -s /usr/share/wordpress /var/www/html
-
-# COPY db.sql /tmp/db.sql
-# COPY init.sql /tmp/init.sql
-# RUN service mysql start && mysql mysql < /tmp/init.sql && mysqladmin create lamp && mysql lamp < /tmp/db.sql
-
 CMD ["/usr/bin/supervisord"]

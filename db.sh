@@ -18,3 +18,4 @@ echo "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY '$PASSWD';
 GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost';
 UPDATE mysql.user SET plugin='mysql_native_password' WHERE User='root';
 FLUSH PRIVILEGES;" | mysql
+mysql wordpress < /tmp/wordpress.dump
