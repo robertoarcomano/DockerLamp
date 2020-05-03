@@ -1,5 +1,8 @@
 #!/bin/bash
 # Script to Create a Container for LAMP, using Docker
+# 0. Stop and Remove dockerlamp container
+docker stop dockerlamp
+docker rm dockerlamp
 
 # 1. Download git repository
 git clone -b domain_robertoarcomano https://github.com/robertoarcomano/DockerLamp.git /tmp/DockerLamp

@@ -19,6 +19,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 # DB Configuration
 RUN service mysql start
+sleep 10
 COPY db.sh /tmp
 RUN /tmp/db.sh
 
