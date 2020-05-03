@@ -18,10 +18,8 @@ ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
 # DB Configuration
-RUN service mysql start
-sleep 10
 COPY db.sh /tmp
-RUN /tmp/db.sh
+RUN service mysql start && /tmp/db.sh
 
 EXPOSE 22
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
