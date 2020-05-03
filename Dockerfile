@@ -1,7 +1,7 @@
 # Dockerfile ubuntu example
 
 # Create from ubuntu
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN env TZ=Europe/Rome
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
