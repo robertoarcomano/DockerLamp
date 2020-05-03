@@ -16,5 +16,5 @@ cat /usr/share/wordpress/wp-config.php | \
 mysqladmin create wordpress;
 echo "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY '$PASSWD';
 GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost';
-UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+UPDATE mysql.user SET plugin='mysql_native_password' WHERE User='root';
 FLUSH PRIVILEGES;" | mysql
