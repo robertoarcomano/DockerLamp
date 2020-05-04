@@ -11,7 +11,7 @@ cat /usr/share/wordpress/wp-config.php | \
         print DB_PASSWD;
       }
       print $0
-    }' > /etc/wordpress/config-localhost.php
+    }' > /etc/wordpress/config-robertoarcomano.it.php
 
 mysqladmin create wordpress;
 echo "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY '$PASSWD';
