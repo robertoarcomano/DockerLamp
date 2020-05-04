@@ -23,7 +23,9 @@ COPY wordpress.dump /tmp
 RUN service mysql start && /tmp/db.sh
 
 RUN rm -rf /var/www/html
-RUN ln -s /usr/share/wordpress /var/www/html
+# RUN ln -s /usr/share/wordpress /var/www/html
+RUN tar zxvf wordpress.tgz -C /var/www/
+RUN ln -s /var/www/wordpress /var/www/html
 RUN a2enmod rewrite
 COPY htaccess /etc/wordpress/
 

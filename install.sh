@@ -8,6 +8,7 @@ docker rm dockerlamp
 git clone -b domain_robertoarcomano https://github.com/robertoarcomano/DockerLamp.git /tmp/DockerLamp
 cd /tmp/DockerLamp
 cp /backup/wordpress.dump .
+cp /backup/wordpress.tgz .
 
 # 2. Download Dockerfile and create image
 docker build -t dockerlamp .
