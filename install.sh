@@ -13,7 +13,7 @@ cp /backup/wordpress.dump .
 docker build -t dockerlamp .
 
 # 3. Create the container from the image
-docker create -p 81:80 --name "dockerlamp" dockerlamp
+docker create -p 80:80 --name "dockerlamp" dockerlamp
 
 # 4. Start the container
 docker start dockerlamp
