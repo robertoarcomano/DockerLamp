@@ -20,3 +20,4 @@ UPDATE mysql.user SET plugin='mysql_native_password' WHERE User='root';
 FLUSH PRIVILEGES;" | mysql
 mysql wordpress < /tmp/wordpress.dump
 sed -ri "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
+sed -ri "s/wordpress2020db/$PASSWD/" /var/www/wordpress/wp-config.php
