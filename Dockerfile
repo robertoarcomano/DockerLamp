@@ -25,7 +25,7 @@ RUN service mysql start && /tmp/db.sh
 RUN rm -rf /var/www/html
 RUN ln -s /usr/share/wordpress /var/www/html
 RUN a2enmod rewrite
-COPY .htaccess /etc/wordpress/
+COPY htaccess /etc/wordpress/
 
 EXPOSE 22
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
